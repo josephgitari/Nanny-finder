@@ -1,0 +1,50 @@
+   <!-- Message Chat  -->
+   <div id="text-chat" class="section">
+    <h3>Text Chat with Nannies/Parents</h3>
+    <div class="chat-box" id="chat-box">
+        <!-- Chat messages will appear here dynamically -->
+        <p><strong>Parent:</strong> Hi, can we schedule an interview for tomorrow?</p>
+        <p><strong>Nanny:</strong> Sure! I’m available at 10 AM.</p>
+    </div>
+    <div class="chat-input">
+       
+        <input type="text" id="message-input" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<!-- Video Call Section -->
+<div id="video-call" class="section">
+    <h3>Video Call Feature</h3>
+    <div class="video-chat">
+        <div class="video-box" id="local-video">
+            
+            <p> Video call</p>
+        </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="startCall()">Start Video Call</button>
+    </div>
+</div>
+
+</div>
+
+<script>
+
+function sendMessage() {
+    const chatBox = document.getElementById('chat-box');
+    const messageInput = document.getElementById('message-input');
+    const message = messageInput.value;
+
+    if (message) {
+        const newMessage = document.createElement('p');
+        newMessage.innerHTML = `<strong>You:</strong> ${message}`;
+        chatBox.appendChild(newMessage);
+        messageInput.value = ''; 
+        chatBox.scrollTop = chatBox.scrollHeight; 
+    }
+}
+function startCall() {
+    alert("Starting video call...");
+    
+}
+</script>
